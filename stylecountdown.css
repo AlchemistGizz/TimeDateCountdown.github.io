@@ -1,0 +1,141 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family:sans-serif ;
+    box-sizing: border-box;
+}
+
+/* col- width*/
+.col-1 { width: 8.33%;}
+.col-2 { width: 16.66%;}
+.col-3 { width: 8.33%;}
+.col-4 { width: 25%;}
+.col-5 { width: 33.33%;}
+.col-6 { width:41.66%;}
+.col-7 { width: 58.33%;}
+.col-8 { width: 66.66%;}
+.col-9 { width: 75%;}
+.col-10 { width: 83.33%;}
+.col-11 { width: 91.66%;}  
+.col-12 { width: 100%;}
+
+img {
+    width:100%;
+    height: auto;}
+
+     /*On screens with a maximum-width of 500px, set the box to have a width of 100%.*/
+ @media screen and (max-width:400px)
+ { [ class*= "col-"] {width:100%;}   }  
+
+/*background*/
+.container
+{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(images/backgroundorg.jpg);
+    background-position: center;
+    background-size: cover;
+    padding: 0 8%;
+    position: relative;
+
+}
+ /* img logo*/
+#logo{
+    width: 200px;
+    height: 200px;
+    
+} /* class content*/
+.content
+{
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+    color: #fff;
+
+}
+/*h1 text*/
+.content h1{
+    font-size: 64px;
+    font-weight: 600;
+}
+/*h1 span set.*/
+.content h1 span {
+    color: #ff3753;
+    
+}
+/*font Launch Time*/
+.launch-time div span {
+    font-size: 24px;
+    font-weight: bold; 
+    margin-left: 8px;
+      
+}
+/*button style*/
+.content button {
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    padding: 8px  25px;
+    color: #fff;
+    margin-top: 30px;
+    cursor: pointer;
+    
+
+}
+/*button text*/
+.content button span {
+    font-size: 16px;
+    position: relative;
+    top: -9px;
+    font-family: fantasy;
+}
+/*button img*/
+.content button img{
+    width: 20px;
+    margin-left: 5px;
+    margin-top: 5px;
+    
+}
+/*animation rocket*/
+.launch-time{
+    display: flex;
+}
+.launch-time div {
+    flex-basis: 100px;
+}
+.launch-time div p {
+    font-size: 55px;
+    margin-bottom: -6px;
+    line-height: 1.2;
+}
+
+.launch-time div span  { 
+    font-size: 18px;
+    margin-right: 6px;
+}
+
+.rocket {
+    width: 250px;
+    position: absolute;
+    bottom: -100px; /* rocket is outside the screen at the */
+    right: 20px; /*playing from right down corner */
+    opacity: 0; /*transperent at the beginning */
+    animation: launch 5s ease-out infinite;
+}
+
+@keyframes launch {
+    0% {
+        bottom: -100px;
+        right: 20px;
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        bottom: 100vh; /* Go to the top of the schreen*/
+        right: 50px; /* move slightly to the left and go up */
+        opacity: 0; /* dissappear*/
+    }
+}
